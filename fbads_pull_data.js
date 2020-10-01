@@ -19,19 +19,19 @@
         "sx_101e5d": "Messenger"
     };
     var data = '';
-    var length = hrefs.length
+    var length = hrefs.length;
     for (var i = 0; i < length; i++) {
         var parentEl = hrefs[i];
         var obj = {};
-        obj.date = parentEl.querySelector('div ._9cd3').innerHTML;
+        obj.date = parentEl.querySelector('div ._9cd3').innerHTML.replace('Started running on ', '');
         obj.status = parentEl.querySelector('div ._9cd2').innerHTML;
         obj.logos = [];
         var logEl = parentEl.querySelectorAll('._2fyi span i');
         for (var j = 0; j < logEl.length; j++) {
             var _lcls = logEl[j].getAttribute('class').split(' ');
-            for(var k=_lcls.length-1;k>=0;k--){
-                if(logos_object[_lcls[k]]){
-                    obj.logos[j]=logos_object[_lcls[k]];
+            for (var k = _lcls.length - 1; k >= 0; k--) {
+                if (logos_object[_lcls[k]]) {
+                    obj.logos[j] = logos_object[_lcls[k]];
                     break;
                 }
             }
@@ -55,4 +55,3 @@
     }
     console.log(data);
 })();
-

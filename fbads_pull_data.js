@@ -13,10 +13,10 @@
     };
     var hrefs = document.getElementsByClassName('_99s5');
     var logos_object = {
-        "sx_aab75f": "Facebook",
-        "sx_8c7564": "Instagram",
-        "sx_c0bc96": "Audience Network",
-        "sx_101e5d": "Messenger"
+        "sx_7c9968": "Facebook",
+        "sx_79cdb4": "Instagram",
+        "sx_7db118": "Audience Network",
+        "sx_4be4f2": "Messenger"
     };
     var data = '';
     var length = hrefs.length;

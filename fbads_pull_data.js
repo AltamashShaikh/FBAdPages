@@ -13,10 +13,10 @@
     };
     var hrefs = document.getElementsByClassName('_99s5');
     var logos_object = {
-        "sx_7c9968": "Facebook",
-        "sx_79cdb4": "Instagram",
-        "sx_7db118": "Audience Network",
-        "sx_4be4f2": "Messenger"
+        "sx_ffd4be": "Facebook",
+        "sx_d25c5a": "Instagram",
+        "sx_603f28": "Audience Network",
+        "sx_9669a0": "Messenger"
     };
     var data = '';
     var length = hrefs.length;
@@ -24,7 +24,13 @@
         var parentEl = hrefs[i];
         var obj = {};
         obj.date = parentEl.querySelector('div ._9cd3').innerHTML.replace('Started running on ', '');
+        obj.ad_id = parentEl.querySelector('div ._9cd3 ._4rhp').innerHTML.replace('ID: ', '');
         obj.status = parentEl.querySelector('div ._9cd2').innerHTML;
+        obj.acn = '';
+        if(parentEl.querySelector('div ._7jyr')){
+            obj.acn = parentEl.querySelector('div ._7jyr').innerText; 
+        }
+        
         obj.logos = [];
         var logEl = parentEl.querySelectorAll('._2fyi span i');
         for (var j = 0; j < logEl.length; j++) {
@@ -32,6 +38,9 @@
             for (var k = _lcls.length - 1; k >= 0; k--) {
                 if (logos_object[_lcls[k]]) {
                     obj.logos[j] = logos_object[_lcls[k]];
+                    break;
+                } else{
+                    obj.logos[j] = _lcls[k];
                     break;
                 }
             }

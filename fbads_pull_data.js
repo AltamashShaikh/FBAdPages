@@ -13,17 +13,17 @@
     };
     var hrefs = document.getElementsByClassName('_99s5');
     var logos_object = {
-        "sx_ffd4be": "Facebook",
-        "sx_d25c5a": "Instagram",
-        "sx_603f28": "Audience Network",
-        "sx_9669a0": "Messenger"
+        "sx_0800b2": "Facebook",
+        "sx_7ec8d4": "Instagram",
+        "sx_8a5fa4": "Audience Network",
+        "sx_79eef9": "Messenger"
     };
     var data = '';
     var length = hrefs.length;
     for (var i = 0; i < length; i++) {
         var parentEl = hrefs[i];
         var obj = {};
-        obj.date = parentEl.querySelector('div ._9cd3').innerHTML.replace('Started running on ', '');
+        obj.date = parentEl.querySelector('div ._9cd3 span').innerHTML.replace('Started running on ', '');
         obj.ad_id = parentEl.querySelector('div ._9cd3 ._4rhp').innerHTML.replace('ID: ', '');
         obj.status = parentEl.querySelector('div ._9cd2').innerHTML;
         obj.acn = '';
